@@ -1,0 +1,85 @@
+# Project: genetic_nn
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = obj/activation_functions.o obj/config.o obj/dataset.o obj/fully_connected_layer.o obj/gradient_desc_optimizer.o obj/initializers.o obj/layer.o obj/main.o obj/matrix.o obj/nn_model.o obj/quadratic_loss.o obj/genetic_algorithm_optimizer.o obj/genetic_solution.o obj/population.o obj/crossover.o obj/mutations.o obj/selection.o obj/util.o obj/solution_pool.o obj/tourney_layer.o
+LINKOBJ  = obj/activation_functions.o obj/config.o obj/dataset.o obj/fully_connected_layer.o obj/gradient_desc_optimizer.o obj/initializers.o obj/layer.o obj/main.o obj/matrix.o obj/nn_model.o obj/quadratic_loss.o obj/genetic_algorithm_optimizer.o obj/genetic_solution.o obj/population.o obj/crossover.o obj/mutations.o obj/selection.o obj/util.o obj/solution_pool.o obj/tourney_layer.o
+LIBS     = -L"C:/msys64/mingw64/lib" -L"C:/msys64/mingw64/x86_64-w64-mingw32/lib" -static-libgcc -static-libstdc++ -lopenBLAS -lgomp -g3
+INCS     = -I"C:/msys64/mingw64/include" -I"C:/msys64/mingw64/x86_64-w64-mingw32/include" -I"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/msys64/mingw64/include" -I"C:/msys64/mingw64/x86_64-w64-mingw32/include" -I"C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+BIN      = genetic_nn.exe
+CXXFLAGS = $(CXXINCS) -Ofast -g3 -std=c++17 -Wall -fopenmp
+CFLAGS   = $(INCS) -Ofast -g3 -std=c++17 -Wall
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+obj/activation_functions.o: activation_functions.cpp
+	$(CPP) -c activation_functions.cpp -o obj/activation_functions.o $(CXXFLAGS)
+
+obj/config.o: config.cpp
+	$(CPP) -c config.cpp -o obj/config.o $(CXXFLAGS)
+
+obj/dataset.o: dataset.cpp
+	$(CPP) -c dataset.cpp -o obj/dataset.o $(CXXFLAGS)
+
+obj/fully_connected_layer.o: fully_connected_layer.cpp
+	$(CPP) -c fully_connected_layer.cpp -o obj/fully_connected_layer.o $(CXXFLAGS)
+
+obj/gradient_desc_optimizer.o: gradient_desc_optimizer.cpp
+	$(CPP) -c gradient_desc_optimizer.cpp -o obj/gradient_desc_optimizer.o $(CXXFLAGS)
+
+obj/initializers.o: initializers.cpp
+	$(CPP) -c initializers.cpp -o obj/initializers.o $(CXXFLAGS)
+
+obj/layer.o: layer.cpp
+	$(CPP) -c layer.cpp -o obj/layer.o $(CXXFLAGS)
+
+obj/main.o: main.cpp
+	$(CPP) -c main.cpp -o obj/main.o $(CXXFLAGS)
+
+obj/matrix.o: matrix.cpp
+	$(CPP) -c matrix.cpp -o obj/matrix.o $(CXXFLAGS)
+
+obj/nn_model.o: nn_model.cpp
+	$(CPP) -c nn_model.cpp -o obj/nn_model.o $(CXXFLAGS)
+
+obj/quadratic_loss.o: quadratic_loss.cpp
+	$(CPP) -c quadratic_loss.cpp -o obj/quadratic_loss.o $(CXXFLAGS)
+
+obj/genetic_algorithm_optimizer.o: genetic_algorithm_optimizer.cpp
+	$(CPP) -c genetic_algorithm_optimizer.cpp -o obj/genetic_algorithm_optimizer.o $(CXXFLAGS)
+
+obj/genetic_solution.o: genetic_solution.cpp
+	$(CPP) -c genetic_solution.cpp -o obj/genetic_solution.o $(CXXFLAGS)
+
+obj/population.o: population.cpp
+	$(CPP) -c population.cpp -o obj/population.o $(CXXFLAGS)
+
+obj/crossover.o: crossover.cpp
+	$(CPP) -c crossover.cpp -o obj/crossover.o $(CXXFLAGS)
+
+obj/mutations.o: mutations.cpp
+	$(CPP) -c mutations.cpp -o obj/mutations.o $(CXXFLAGS)
+
+obj/selection.o: selection.cpp
+	$(CPP) -c selection.cpp -o obj/selection.o $(CXXFLAGS)
+
+obj/util.o: util.cpp
+	$(CPP) -c util.cpp -o obj/util.o $(CXXFLAGS)
+
+obj/solution_pool.o: solution_pool.cpp
+	$(CPP) -c solution_pool.cpp -o obj/solution_pool.o $(CXXFLAGS)
+
+obj/tourney_layer.o: tourney_layer.cpp
+	$(CPP) -c tourney_layer.cpp -o obj/tourney_layer.o $(CXXFLAGS)
