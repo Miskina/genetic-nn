@@ -1,7 +1,7 @@
 input_features=2
 output_features=3
 
-dataset_loc=D:\FER\diplomski\1.semestar\NENAR\zad7-dataset.txt
+dataset_loc=dataset.txt
 
 epochs=1000000
 log_point=10000
